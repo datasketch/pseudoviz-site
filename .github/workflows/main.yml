@@ -29,6 +29,6 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Build Site
-      run: npm run build
+      run: npm run build -- --site https://sites.dskt.ch --base /datasketch/pseudoviz
     - name: Deploy to S3
       run: aws s3 sync ./dist ${{ secrets.S3_BUCKET }}
