@@ -31,4 +31,4 @@ jobs:
     - name: Build Site
       run: npm run build
     - name: Deploy to S3
-      run: aws s3 sync ./dist s3://uploads.dskt.ch/datasketch/pseudoviz-site/
+      run: aws s3 sync ./dist ${{ sesecrets.S3_BUCKET }}
