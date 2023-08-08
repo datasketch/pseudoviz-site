@@ -12,7 +12,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       SITE_TITLE: "Pseudoviz"
       SITE_DESCRIPTION: ""
-      SITE_DATA: ${{ SITE_DATA }}
+      SITE_DATA: ${{ secrets.SITE_DATA }}
     steps:
     - name: Checkout
       uses: actions/checkout@v3
