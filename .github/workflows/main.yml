@@ -3,7 +3,7 @@ name: Deploy a S3
 on:
   workflow_dispatch:
      inputs:
-      id:
+      dispatch_id:
         description: 'run identifier'
         required: false
 
@@ -20,8 +20,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: ${{ github.event.inputs.id }}
-      run: echo run indetifier ${{ github.event.inputs.id }}
+    - name: ${{ github.event.inputs.dispatch_id }}
+      run: echo run indetifier ${{ github.event.inputs.dispatch_id }}
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
