@@ -2,9 +2,13 @@ name: Deploy a S3
 
 on:
   workflow_dispatch:
+     inputs:
+      id:
+        description: 'run identifier'
+        required: false
 
 jobs:
-  deploy:
+  id:
     name: Build
     runs-on: ubuntu-latest
     env:
@@ -16,6 +20,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+    - name: ${{github.event.inputs.id}}
+      run: echo run indetifier ${{github.event.inputs.id}}
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
